@@ -8,7 +8,7 @@ function Navbar() {
                     <NavbarLink to="/homepage">Homepage</NavbarLink>
                 </NavbarItem>
                 <NavbarItem>
-                    <NavbarLink to="/contact">Contact</NavbarLink>
+                    <NavbarLink to="/contact">Contato</NavbarLink>
                 </NavbarItem>
             </NavbarList>
         </NavbarContainer>

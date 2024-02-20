@@ -1,3 +1,5 @@
+import { Container, Title } from './contact.styles'
+
 import Header from '../../components/Header/header'
 import Footer from '../../components/Footer/footer'
 
@@ -5,9 +7,9 @@ function Contact () {
     return (
         <>
             <Header />
-            <div className="content">
-                <h1>Formulário de contato aqui</h1>
-            </div>
+            <Container>
+                <Title>Página de Contato</Title>
+            </Container>
             <Footer />
         </>  
     )
