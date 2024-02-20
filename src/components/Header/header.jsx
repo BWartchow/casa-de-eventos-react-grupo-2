@@ -1,8 +1,14 @@
+import HeaderContainer from "./header.styles"
+
+import Logo from "../Logo/logo";
+import Navbar from "../Navbar/navbar";
+
 function Header() {
     return (
-        <div className="header">
-            <h1>Cabeçalho inicial</h1>
-        </div>
+        <HeaderContainer>
+            <Logo />
+            <Navbar />
+        </HeaderContainer>
     )
 }
 
