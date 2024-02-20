@@ -1,6 +1,10 @@
+import { LogoContainer, LogoImage } from "./logo.styles"
+
 function Logo() {
     return (
-        <h1>Logo</h1>
+        <LogoContainer>
+            <LogoImage src="./images/logo.svg" alt="Logomarca da casa de eventos" />
+        </LogoContainer>
     )
 }
 export default Logo
