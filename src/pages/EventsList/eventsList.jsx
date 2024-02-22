@@ -3,10 +3,26 @@ import axios from 'axios'
 
 import Header from '../../components/Header/header'
 import Footer from '../../components/Footer/footer'
+import { 
+        ListContainer,
+        ListTitle,
+        Table,
+        TableHeader,
+        HeaderRow,
+        HeaderItem,
+        Event,
+        EventItem,
+        RemoveButton,
+        TableBody
+     } from './eventsList.styles'
 
 function EventsList() {
 
     const [events, setEvents] = useState([]);
+
+    const deleteEvent = async (id) => {
+        console.log(id)
+    }
 
     useEffect(() => {
         const listEvents = async () => {
@@ -22,16 +38,35 @@ function EventsList() {
     return (
         <>
             <Header />
-            <h1>Área administrativa</h1>
-            <h2>Lista de Eventos</h2>
-            { events.map((event, index) => (
-            <div key={index}>
-                <h3>{ event.title }</h3>
-                <img src={ event.image_url } alt={ event.title } />
-                <br />
-                <p>Data e Hora: { event.date } - { event.time }</p>
-            </div>
-            ))}
+            <ListContainer>
+                <ListTitle>Lista de Eventos cadastrados</ListTitle>
+                <Table>
+                    <TableHeader>
+                        <HeaderRow>
+                            <HeaderItem>Título</HeaderItem>
+                            <HeaderItem>Data e Hora</HeaderItem>
+                            <HeaderItem>Preço</HeaderItem>
+                            <HeaderItem>URL da Imagem</HeaderItem>
+                            <HeaderItem width="100px">É privado?</HeaderItem>
+                            <HeaderItem>Ações</HeaderItem>
+                        </HeaderRow>
+                    </TableHeader>
+                    <TableBody>
+                        { events.map((event, index) => (
+                        <Event key={index}>
+                            <EventItem>{ event.title }</EventItem>
+                            <EventItem>{ event.date } - { event.time }</EventItem>
+                            <EventItem>{ event.price }</EventItem>
+                            <EventItem>{ event.image_url }</EventItem>
+                            <EventItem>{ event.private }</EventItem>
+                            <EventItem>
+                                <RemoveButton onClick={() => {deleteEvent(event.id)}}>Excluir</RemoveButton>
+                            </EventItem>                           
+                        </Event>
+                        ))}
+                    </TableBody>
+                </Table>
+            </ListContainer>
             <Footer />
         </>
     )
