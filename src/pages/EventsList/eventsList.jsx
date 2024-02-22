@@ -21,7 +21,14 @@ function EventsList() {
     const [events, setEvents] = useState([]);
 
     const deleteEvent = async (id) => {
-        console.log(id)
+        try {
+            await axios.delete(`http://localhost:3000/events/${id}`);
+            const filteredEvents = events.filter(event => event.id !== id);
+            setEvents(filteredEvents);
+            alert("Evento excluído com sucesso!");
+        } catch (error) {
+            console.error('Erro ao excluir evento', error);
+        }
     }
 
     useEffect(() => {
@@ -58,7 +65,7 @@ function EventsList() {
                             <EventItem>{ event.date } - { event.time }</EventItem>
                             <EventItem>{ event.price }</EventItem>
                             <EventItem>{ event.image_url }</EventItem>
-                            <EventItem>{ event.private }</EventItem>
+                            <EventItem>{ event.private_event }</EventItem>
                             <EventItem>
                                 <RemoveButton onClick={() => {deleteEvent(event.id)}}>Excluir</RemoveButton>
                             </EventItem>                           

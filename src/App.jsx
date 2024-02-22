@@ -5,6 +5,7 @@ import Homepage from './pages/Homepage/homepage'
 import Contact from './pages/Contact/contact'
 import EventsList from './pages/EventsList/eventsList'
 import EventDetails from './pages/EventDetails/eventDetails'
+import AddEvent from './pages/AddEvent/addEvent'
 
 import './index.css'
 
@@ -18,6 +19,7 @@ function App() {
         <Route path='/admin' element={<EventsList />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/event/:id" element={<EventDetails />} />
+        <Route path="/add-event" element={<AddEvent />} />
       </Routes>
     </BrowserRouter>
   )
