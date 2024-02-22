@@ -5,10 +5,13 @@ function Navbar() {
         <NavbarContainer>
             <NavbarList>
                 <NavbarItem>
-                    <NavbarLink to="/homepage">Homepage</NavbarLink>
+                    <NavbarLink to="/">Homepage</NavbarLink>
                 </NavbarItem>
                 <NavbarItem>
                     <NavbarLink to="/contact">Contato</NavbarLink>
+                </NavbarItem>
+                <NavbarItem>
+                    <NavbarLink to="/login">Entrar</NavbarLink>
                 </NavbarItem>
             </NavbarList>
         </NavbarContainer>
