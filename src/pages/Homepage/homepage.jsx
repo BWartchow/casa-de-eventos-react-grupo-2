@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
-import { Container, Title, Slogan, 
-        Events, EventsList, EventsItem, EventTitle, EventImage, EventDateTime
-     } from './homepage.styles'
+import { Container, Title, Slogan, Events, EventsList } from './homepage.styles'
 
 import Header from '../../components/Header/header'
 import Footer from '../../components/Footer/footer'
+import Card from '../../components/Card/card'
 
 function Homepage () {
 
@@ -33,12 +32,14 @@ function Homepage () {
                 <Events>
                     <EventsList>
                         { events.map((event, index) => (
-                        <EventsItem key={index}>
-                            <EventTitle>{ event.title }</EventTitle>
-                            <EventImage src={ event.image_url } alt={ event.title } />
-                            <br />
-                            <EventDateTime>Data e Hora: { event.date } - { event.time }</EventDateTime>
-                        </EventsItem>
+                        <Card
+                            key={ index }
+                            title={ event.title } 
+                            imageUrl={event.image_url}
+                            date={ event.date }
+                            time={ event.time }
+                            id={ event.id }
+                        />
                         ))}
                     </EventsList>
                 </Events>
