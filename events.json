@@ -1,45 +1,52 @@
 {
-  "events": [
-    {
-      "id": "1",
-      "title": "Formatura Colegio D. Pedro",
-      "date": "12/02/2024",
-      "time": "20:00",
-      "price": 0,
-      "image_url": "https://roofranklin.github.io/casa-de-eventos/img/formatura.jpeg",
-      "private_event": true
-    },
-    {
-      "id": "2",
-      "title": "Concurso de Fantasias",
-      "date": "15/02/2024",
-      "time": "20:00",
-      "price": 40,
-      "image_url": "https://2.bp.blogspot.com/-1RY8exHsbc0/ULqZkHplVfI/AAAAAAAAG9I/93BbeXGUyM0/s1600/DSC00139.JPG",
-      "private_event": false
-    },
-    {
-      "id": "3",
-      "title": "Casamento Florinda e Girafales",
-      "date": "09/03/2024",
-      "time": "16:00",
-      "price": 0,
-      "image_url": "https://imgsapp.em.com.br/app/noticia_127983242361/2023/05/21/1496049/uma-cor-que-esta-totalmente-proibida-para-as-convidadas-de-acordo-com-a-etiqueta-de-casamento-e-o-branco-que-esta-reservado-para-as-noivas-a-nao-ser-que-o-casamento-seja-na-praia_1_55583.jpg",
-      "private_event": false
-    }
-  ],
-  "users": [
-    {
-      "name": "Gustavo",
-      "email": "gustavo@ig.com.br",
-      "password": "123456",
-      "id": "77d2"
-    },
-    {
-      "name": "João",
-      "email": "joao@ig.com.br",
-      "password": "123456",
-      "id": "62ce"
-    }
-  ]
+	"events": [
+		{
+			"id": "2",
+			"title": "Concurso de Fantasias",
+			"date": "15/02/2024",
+			"time": "20:00",
+			"price": 40,
+			"image_url": "https://2.bp.blogspot.com/-1RY8exHsbc0/ULqZkHplVfI/AAAAAAAAG9I/93BbeXGUyM0/s1600/DSC00139.JPG",
+			"private_event": false
+		},
+		{
+			"id": "3",
+			"title": "Casamento Florinda e Girafales",
+			"date": "09/03/2024",
+			"time": "16:00",
+			"price": 0,
+			"image_url": "https://imgsapp.em.com.br/app/noticia_127983242361/2023/05/21/1496049/uma-cor-que-esta-totalmente-proibida-para-as-convidadas-de-acordo-com-a-etiqueta-de-casamento-e-o-branco-que-esta-reservado-para-as-noivas-a-nao-ser-que-o-casamento-seja-na-praia_1_55583.jpg",
+			"private_event": false
+		},
+		{
+			"id": "0f19",
+			"title": "evento 2",
+			"date": "20/04/2024",
+			"time": "00:00",
+			"price": "",
+			"image_url": "https://media.istockphoto.com/id/974238866/pt/foto/audience-listens-to-the-lecturer-at-the-conference.jpg?s=612x612&w=0&k=20&c=ZOCjHsr2nyWVvAgjA36Kg1FaIQpvQ3oThxEf_W7JdCc=",
+			"private_event": "on"
+		}
+	],
+	"users": [
+		{
+			"name": "Gustavo",
+			"email": "gustavo@ig.com.br",
+			"password": "123456",
+			"id": "77d2"
+		},
+		{
+			"name": "João",
+			"email": "joao@ig.com.br",
+			"password": "123456",
+			"id": "62ce"
+		},
+		{
+			"id": "22af",
+			"name": "novo user",
+			"email": "julia@gk.com",
+			"password": "1231231",
+			"isAdmin": true
+		}
+	]
 }
