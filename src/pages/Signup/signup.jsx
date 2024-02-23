@@ -2,10 +2,10 @@ import { useState } from "react"
 import axios from "axios"
 
 import {
-	LoginContainer,
-	LoginContent,
-	LoginBox,
-	LoginTitle,
+	SignupContainer,
+	SignupContent,
+	SignupBox,
+	SignupTitle,
 	FormBox,
 	FormItem,
 	FormLabel,
@@ -17,7 +17,8 @@ import {
 	LogoContainer,
 	Logo,
 	ErrorMessage,
-} from "../Login/login.styles"
+	CheckboxContainer,
+} from "./signup.styles"
 
 function Signup() {
 	const [user, setUser] = useState({
@@ -62,7 +63,7 @@ function Signup() {
 	}
 
 	return (
-		<LoginContainer>
+		<SignupContainer>
 			<Sidebar>
 				<SidebarContainer>
 					<LogoContainer>
@@ -73,9 +74,9 @@ function Signup() {
 					</LogoContainer>
 				</SidebarContainer>
 			</Sidebar>
-			<LoginContent>
-				<LoginBox>
-					<LoginTitle>Cadastrar Usuário</LoginTitle>
+			<SignupContent>
+				<SignupBox>
+					<SignupTitle>Cadastrar Usuário</SignupTitle>
 					<FormBox>
 						<FormItem>
 							<FormLabel>Nome:</FormLabel>
@@ -107,23 +108,25 @@ function Signup() {
 							/>
 						</FormItem>
 						<FormItem>
-							<FormLabel>É Admin?</FormLabel>
-							<FormInputCheckbox
-								type="checkbox"
-								value={user.isAdmin}
-								onChange={() => {
-									setIsAdmin(!isAdmin)
-								}}
-							/>
+							<CheckboxContainer>
+								<FormLabel>É Admin?</FormLabel>
+								<FormInputCheckbox
+									type="checkbox"
+									value={user.isAdmin}
+									onChange={() => {
+										setIsAdmin(!isAdmin)
+									}}
+								/>
+							</CheckboxContainer>
 						</FormItem>
 						<FormItem>
 							<FormButton onClick={RegisterUser}>Registrar</FormButton>
 						</FormItem>
 						{error && <ErrorMessage>{error}</ErrorMessage>}
 					</FormBox>
-				</LoginBox>
-			</LoginContent>
-		</LoginContainer>
+				</SignupBox>
+			</SignupContent>
+		</SignupContainer>
 	)
 }
 
