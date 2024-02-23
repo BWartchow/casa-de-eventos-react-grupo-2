@@ -20,20 +20,29 @@ import {
 } from "../Login/login.styles"
 
 function Signup() {
-	const [name, setName] = useState("")
-	const [email, setEmail] = useState("")
-	const [password, setPassword] = useState("")
+	const [user, setUser] = useState({
+		name: "",
+		email: "",
+		password: "",
+	})
 	const [isAdmin, setIsAdmin] = useState(false)
 	const [error, setError] = useState("")
+
+	const handleChange = (e) => {
+		const { name, value } = e.target
+		setUser((prevUser) => ({
+			...prevUser,
+			[name]: value,
+		}))
+	}
 
 	const RegisterUser = async () => {
 		try {
 			const newUser = {
-				name: name,
-				email: email,
-				password: password,
+				...user,
 				isAdmin: isAdmin,
 			}
+			console.log(newUser)
 
 			const responseUsers = await axios.get("http://localhost:3000/users")
 			const users = responseUsers.data
@@ -73,8 +82,9 @@ function Signup() {
 							<FormInput
 								type="text"
 								placeholder="Nome"
-								value={name}
-								onChange={(e) => setName(e.target.value)}
+								name="name"
+								value={user.name}
+								onChange={handleChange}
 							/>
 						</FormItem>
 						<FormItem>
@@ -82,25 +92,28 @@ function Signup() {
 							<FormInput
 								type="text"
 								placeholder="Email"
-								value={email}
-								onChange={(e) => setEmail(e.target.value)}
+								name="email"
+								value={user.email}
+								onChange={handleChange}
 							/>
 						</FormItem>
 						<FormItem>
 							<FormLabel>Senha:</FormLabel>
 							<FormInput
 								type="password"
-								placeholder=""
-								value={password}
-								onChange={(e) => setPassword(e.target.value)}
+								name="password"
+								value={user.password}
+								onChange={handleChange}
 							/>
 						</FormItem>
 						<FormItem>
 							<FormLabel>É Admin?</FormLabel>
 							<FormInputCheckbox
 								type="checkbox"
-								value={isAdmin}
-								onChange={() => setIsAdmin(!isAdmin)}
+								value={user.isAdmin}
+								onChange={() => {
+									setIsAdmin(!isAdmin)
+								}}
 							/>
 						</FormItem>
 						<FormItem>
