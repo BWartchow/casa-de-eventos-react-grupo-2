@@ -6,7 +6,7 @@ import Contact from "./pages/Contact/contact"
 import EventsList from "./pages/EventsList/eventsList"
 import EventDetails from "./pages/EventDetails/eventDetails"
 import AddEvent from "./pages/AddEvent/addEvent"
-import AddUser from "./pages/AddUser/addUser"
+import Signup from "./pages/Signup/signup"
 
 import "./index.css"
 
@@ -39,8 +39,8 @@ function App() {
 					element={<AddEvent />}
 				/>
 				<Route
-					path="/addUser"
-					element={<AddUser />}
+					path="/signup"
+					element={<Signup />}
 				/>
 			</Routes>
 		</BrowserRouter>

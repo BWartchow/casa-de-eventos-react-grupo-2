@@ -1,6 +1,5 @@
 import { useState } from "react"
 import axios from "axios"
-import { useNavigate } from "react-router-dom"
 
 import {
 	LoginContainer,
@@ -20,7 +19,7 @@ import {
 	ErrorMessage,
 } from "../Login/login.styles"
 
-function AddUser() {
+function Signup() {
 	const [name, setName] = useState("")
 	const [email, setEmail] = useState("")
 	const [password, setPassword] = useState("")
@@ -115,4 +114,4 @@ function AddUser() {
 	)
 }
 
-export default AddUser
+export default Signup
