@@ -31,13 +31,14 @@ const Login = () => {
             const response = await axios.get('http://localhost:3000/users');
             const users = response.data;
             const userFound = users.find(user => user.name === name && user.password === password);
+            // TO-DO Fazer lógica de navegar pra homepage ou pra admin conforme categoria usuário
             if (userFound) {
                 navigate('/admin');
             } else {
                 setError('Nome ou senha inválido');
             }
         } catch (error) {
-            console.error('Erro ao buscar eventos', error);
+            console.error('Erro ao buscar usuário', error);
         }
     };
     return (

@@ -33,13 +33,15 @@
       "name": "Gustavo",
       "email": "gustavo@ig.com.br",
       "password": "123456",
-      "id": "77d2"
+      "id": "77d2",
+      "isAdmin": true
     },
     {
       "name": "João",
       "email": "joao@ig.com.br",
       "password": "123456",
-      "id": "62ce"
+      "id": "62ce",
+      "isAdmin": true
     },
     {
       "id": "22af",
