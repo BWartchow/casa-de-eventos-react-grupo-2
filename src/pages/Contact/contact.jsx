@@ -1,10 +1,11 @@
 import { Container, Title, FormInput, SendBtn } from './contact.styles'
 import { useState } from "react"
 import axios from "axios"
-import Cabecalho from '../../components/Header/header'
-import Rodape from '../../components/Footer/footer'
-function Contato () {
-    // AQUI ENTRARIAM AS FUNÇÕES JAVASCRIPT, HOOKS, ETC...
+import Header from '../../components/Header/header'
+import Footer from '../../components/Footer/footer'
+
+function Contact () {
+    
     const [contact, setContact]= useState({
         name: "",
         email:"",
@@ -21,13 +22,15 @@ function Contato () {
 	}
     const contactSender = async () => {
         try{
-            if(contact.email.includes("@") && !(contact.name==null)){
+            if(contact.email.includes("@") && !(contact.name==null) && (contact.message.length>0)) {
               const response = await axios.post("http://localhost:3000/contacts", contact) 
+              alert("Mensagem enviada com sucesso!")
             } else{
-                setError("O email deve ser valido e o nome nao pode estar vazio");
+                setError("O email deve ser valido e os campos mensagem e nome não podem estar vazios");
+                alert("O email deve ser valido e os campos mensagem e nome não podem estar vazios")
             }
         } catch (error){
-            alert(error)
+            console.log(error)
 
         }
     }
@@ -35,22 +38,24 @@ function Contato () {
     
 
     return (
-        // AQUI EU COLOCO TUDO QUE EU QUER EXIBIR NA TELA
+        
         <>
-            <Cabecalho />
+            <Header />
             <Container>
                 <Title>Página de Contato</Title>
                 <FormInput
 				type="text"
                 name = 'name'
 				placeholder="Nome"
+                required:true
 				value={contact.name}
 				onChange={handleChange}
 			/>
             <FormInput
-				type="text"
+				type="email"
 				placeholder="Email"
                 name = 'email'
+                required:true
 				value={contact.email}
 				onChange={handleChange}
 			/>    
@@ -58,14 +63,15 @@ function Contato () {
 				type="text"
 				placeholder="Mensagem"
                 name = 'message'
+                required:true
 				value={contact.message}
 				onChange={handleChange}
 			/>
             <SendBtn onClick = {contactSender}>enviar</SendBtn>
             </Container>
-            <Rodape />
+            <Footer />
         </>  
     )
 }
 
-export default Contato
+export default Contact

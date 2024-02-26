@@ -47,6 +47,13 @@
       "email": "julia@gk.com",
       "password": "1231231",
       "isAdmin": true
+    },
+    {
+      "id": "b1c9",
+      "name": "Be",
+      "email": "teste@eu.com",
+      "password": "123456",
+      "isAdmin": false
     }
   ],
   "contacts": [
@@ -67,6 +74,12 @@
       "name": "gggg",
       "email": "123@",
       "message": "nick"
+    },
+    {
+      "id": "2cc4",
+      "name": "Eu",
+      "email": "eu@eu.com",
+      "message": "teste"
     }
   ]
 }
