@@ -18,6 +18,7 @@ import {
     FormLabel,
     FormInput,
     FormButton,
+    FormRegister,
 } from './login.styles';
 
 const Login = () => {
@@ -82,6 +83,7 @@ const Login = () => {
                         </FormItem>
                         <ToastContainer />
                     </FormBox>
+                    <FormRegister to="/signup">Se cadastre aqui</FormRegister>
                 </LoginBox>
             </LoginContent>
         </LoginContainer>

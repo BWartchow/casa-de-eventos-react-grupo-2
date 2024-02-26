@@ -93,4 +93,14 @@ export const FormButton = styled(Link)`
     text-decoration: none;
 `
 
+export const FormRegister = styled(Link)`
+	display: block;
+	margin-top: 20px;
+	text-align: center;
+	font-size: 14px;
+	font-weight: 700;
+	color: #1F0049;
+	text-decoration: none;
+`
+
 export const ErrorMessage = styled.p``
