@@ -1,6 +1,10 @@
 import { useState } from "react"
 import axios from "axios"
 
+import Header from '../../components/Header/header'
+import Footer from '../../components/Footer/footer'
+import { Container, Title, FormContent, FormLabel, FormInput, SendBtn } from './addEvent.styles'
+
 const AddEvent = () => {
 	const [event, setEvent] = useState({
 		title: "",
@@ -32,70 +36,68 @@ const AddEvent = () => {
 
 	return (
 		<>
-			<h1>Adicionar evento</h1>
-			<form onSubmit={handleSubmit}>
-				<label>
-					Titulo:
-					<input
-						type="text"
-						name="title"
-						value={event.title}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<label>
-					Data:
-					<input
-						type="text"
-						name="date"
-						value={event.date}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<label>
-					Horário:
-					<input
-						type="time"
-						name="time"
-						value={event.time}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<label>
-					Preço:
-					<input
-						type="number"
-						name="price"
-						value={event.price}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<label>
-					URL da imagem:
-					<input
-						type="text"
-						name="image_url"
-						value={event.image_url}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<label>
-					Evento privado:
-					<input
-						type="checkbox"
-						name="private_event"
-						checked={event.private_event}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<button type="submit">Adicionar evento</button>
-			</form>
+			<Header />
+			<Container>
+				<Title>Adicionar evento</Title>
+				<FormContent onSubmit={handleSubmit}>
+					<FormLabel>
+						Titulo:
+						<FormInput
+							type="text"
+							name="title"
+							value={event.title}
+							onChange={handleChange}
+						/>
+					</FormLabel>
+					<FormLabel>
+						Data:
+						<FormInput
+							type="text"
+							name="date"
+							value={event.date}
+							onChange={handleChange}
+						/>
+					</FormLabel>
+					<FormLabel>
+						Horário:
+						<FormInput
+							type="time"
+							name="time"
+							value={event.time}
+							onChange={handleChange}
+						/>
+					</FormLabel>
+					<FormLabel>
+						Preço:
+						<FormInput
+							type="number"
+							name="price"
+							value={event.price}
+							onChange={handleChange}
+						/>
+					</FormLabel>
+					<FormLabel>
+						URL da imagem:
+						<FormInput
+							type="text"
+							name="image_url"
+							value={event.image_url}
+							onChange={handleChange}
+						/>
+					</FormLabel>
+					<FormLabel>
+						Evento privado:
+						<FormInput
+							type="checkbox"
+							name="private_event"
+							checked={event.private_event}
+							onChange={handleChange}
+						/>
+					</FormLabel>
+					<SendBtn type="submit">Adicionar evento</SendBtn>
+				</FormContent>
+			</Container>
+			<Footer />
 		</>
 	)
 }
