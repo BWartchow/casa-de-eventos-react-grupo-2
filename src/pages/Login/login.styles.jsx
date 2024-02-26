@@ -108,3 +108,19 @@ export const FormButton = styled(Link)`
 `
 
 export const ErrorMessage = styled.p``
+
+export const AddButton = styled(Link)`
+	display: block;
+	margin: 10px auto;
+	text-align: center;
+	width: 140px;
+	height: 44px;
+	border: 1px solid transparent;
+	border-radius: 22px;
+	background-color: #008080;
+	color: #ffffff;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 44px;
+	text-decoration: none;
+`

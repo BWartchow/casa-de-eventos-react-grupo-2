@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom"
 
 export const ListContainer = styled.div`
     width: 100%;
@@ -60,4 +61,20 @@ export const RemoveButton = styled.button`
     font-weight: 700;
     line-height: 24px;
     text-decoration: none;
+`
+
+export const AddButton = styled(Link)`
+	display: block;
+	margin: 10px auto;
+	text-align: center;
+	width: 140px;
+	height: 44px;
+	border: 1px solid transparent;
+	border-radius: 22px;
+	background-color: #008080;
+	color: #ffffff;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 44px;
+	text-decoration: none;
 `

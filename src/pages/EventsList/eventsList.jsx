@@ -13,7 +13,8 @@ import {
         Event,
         EventItem,
         RemoveButton,
-        TableBody
+        TableBody,
+        AddButton
      } from './eventsList.styles'
 
 function EventsList() {
@@ -73,6 +74,7 @@ function EventsList() {
                         ))}
                     </TableBody>
                 </Table>
+                <AddButton to="/add-event">Adicionar Evento</AddButton>
             </ListContainer>
             <Footer />
         </>

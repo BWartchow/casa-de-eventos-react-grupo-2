@@ -16,7 +16,8 @@ import {
     SidebarContainer,
     LogoContainer,
     Logo,
-    ErrorMessage
+    ErrorMessage,
+    AddButton
    } from './login.styles'
 
 const Login = () => {
@@ -62,6 +63,7 @@ const Login = () => {
                     </FormItem>
                     <FormItem>
                         <FormButton onClick={DoTheLogin}>Entrar</FormButton>
+                        <AddButton to="/signup">Cadastre-se</AddButton>
                     </FormItem>
                     {error && <ErrorMessage>{error}</ErrorMessage>}
                 </FormBox>
